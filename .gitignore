@@ -1,0 +1,17 @@
+# Python Virtual Environment
+venv/
+
+# Model and Wheels folders
+blip_model/
+local_wheels/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code specific
+.vscode/
+
+# Build artifacts (if any from your .NET project)
+**/bin/
+**/obj/

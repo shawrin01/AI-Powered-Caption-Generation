@@ -56,7 +56,7 @@ Follow these steps to get the project up and running on your local machine.
 First, clone this GitHub repository to your local machine:
 
 ```bash
-git clone https://github.com/hkhajei/Image-Captioning.git 
+git clone https://github.com/shawrin01/AI-Powered-Caption-Generation
 cd Image-Captioning 
 ```
 
@@ -119,40 +119,8 @@ http://localhost:8080/api/ImageCaption
 
 -----
 
-## Troubleshooting
 
-  * **"Connection refused" or "Internal Server Error" on the web page:**
-      * Ensure all Docker containers are running correctly: `docker ps`.
-      * Check the logs of the `captioning-service` for startup errors: `docker logs -f imagecaptioning-captioning-service-1`.
-      * Check the logs of the `image-captioning-app` for communication errors: `docker logs -f imagecaptioning-image-captioning-app-1`.
-  * **"No conditional caption generated." / "No unconditional caption generated." on the web page:**
-      * This indicates the C\# app connected successfully, but the FastAPI service returned empty or null captions.
-      * **Crucially, check the `captioning-service` logs carefully** (`docker logs -f imagecaptioning-captioning-service-1`). You should see lines like "Generated conditional caption: '...'" confirming the model is producing output. If not, there's a problem with the Python model's execution.
-      * Ensure the BLIP model files were downloaded correctly into `captioning-service/blip_model` and are complete.
-  * **`Console.WriteLine` or `_logger.LogInformation` not showing in ASP.NET Core app logs:**
-      * Make sure you are checking the logs for the correct container: `docker logs -f imagecaptioning-image-captioning-app-1`.
-      * Confirm your ASP.NET Core app is configured for logging to console in `appsettings.Development.json` (e.g., `"LogLevel": { "Default": "Information" }`).
 
------
-
-## Contributing
-
-Contributions are welcome\! If you find a bug, have an idea for an improvement, or want to add a new feature, please feel free to:
-
-1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/your-feature-name`).
-3.  Make your changes.
-4.  Commit your changes (`git commit -m 'Add new feature'`).
-5.  Push to the branch (`git push origin feature/your-feature-name`).
-6.  Open a Pull Request.
-
------
-
-## License
-
-This project is licensed under the [MIT License](https://www.google.com/search?q=LICENSE). 
-
------
 
 ## Acknowledgements
 
